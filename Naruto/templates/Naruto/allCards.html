@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AllCards</title>
+</head>
+<body>
+    <ul>
+        {% for card in cards %} 
+            <h1>{{card.name}}</h1>
+            <h3>{{card.description}}</h3>
+            <li>Level = {{card.level}}</li>
+            <li>Attack = {{card.attack}}</li>
+            <li>Defense = {{card.defense}}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,3 +1,7 @@
 from django.shortcuts import render
+from .models import Card
 
-# Create your views here.
+def showCard(request):
+    data = {}
+    data['cards'] = Card.objects.all()
+    return render(request, 'Naruto/allCards.html',data)
