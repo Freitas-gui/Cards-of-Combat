@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+
+        <div class="fieldWrapper">
+            {{ form.name.errors }}
+            <label for="{{ form.name.id_for_label }}">Name:</label>
+            {{ form.name }}
+        </div>
+        <br>
+        <div class="fieldWrapper">
+            {{ form.description.errors }}
+            <label for="{{ form.description.id_for_label }}">Description:</label>
+            {{ form.description }}
+        </div>
+        <br>
+        <div class="fieldWrapper">
+            {{ form.level.errors }}
+            <label for="{{ form.level.id_for_label }}">Level:</label>
+            {{ form.level }}
+        </div>
+        <br>
+        <div class="fieldWrapper">
+            {{ form.defense.errors }}
+            <label for="{{ form.defense.id_for_label }}">Defense:</label>
+            {{ form.defense }}
+        </div>
+        <br>
+        <div class="fieldWrapper">
+            {{ form.attack.errors }}
+            <label for="{{ form.attack.id_for_label }}">Attack:</label>
+            {{ form.attack }}
+        </div>
+        <br>
+        <button type='submit'>Save</button>
+
+    </form>
+</body>
+</html>

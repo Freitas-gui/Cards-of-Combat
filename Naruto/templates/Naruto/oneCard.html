@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OneCard</title>
+</head>
+<body>
+    <h1>{{card.name}}</h1>
+    <h3>{{card.description}}</h3>
+    <li>Level = {{card.level}}</li>
+    <li>Attack = {{card.attack}}</li>
+    <li>Defense = {{card.defense}}</li>
+    <br><br><br><br><br><a href="{% url 'url_allCards' %}">Back to All Cards</a>
+</body>
+</html>

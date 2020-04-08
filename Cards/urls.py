@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Naruto.views import showCard
+from Naruto.views import showCard, allCards, createCard
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('allCards/',showCard,name = 'url_allCards'),
+    path('',allCards,name = 'url_allCards'),
+    path('oneCard/<int:pk>/',showCard,name = 'url_oneCard'),
+    path('createCard/',createCard,name = 'url_createCard'),
     
     
 ]
