@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +12,12 @@
     <li>Level = {{card.level}}</li>
     <li>Attack = {{card.attack}}</li>
     <li>Defense = {{card.defense}}</li>
-    <br><br><br><br><br><a href="{% url 'url_allCards' %}">Back to All Cards</a>
+    <br><br><br><br><br>
+    
+    <center><a href="{% url 'url_allCards' %}">Back to All Cards</a></center>
+    <br><br>
+    <center><a href="{% url 'url_update' card.id %}"> Update</a></center>
+    <br><br>
+    <center><a href="{% url 'url_delete' card.id %}">Delete</a></center>
 </body>
 </html>
