@@ -1,0 +1,50 @@
+
+#background {
+    background-color: sandybrown;
+ }
+
+.description{
+    color: blueviolet;
+}
+
+.attribute{
+    color: orangered;
+}
+
+.name{
+    color: blue;
+}
+
+html, body{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+}
+
+.content h1{
+    font-family: 'Raleway', sans-serif;
+    font-size: 500%;
+    color: #F9F3F4;
+    text-shadow: 0px 0px 100px 100px #000;
+}
+
+.btn {
+    font-family: 'Oswald', sans-serif;
+    font-size: 140%;
+    color: #F9F3F4;
+    background-color: #D9B8C1;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: solid #D9B8C1 3px;
+    
+    border-radius: 60px;
+}
+p{ 
+    font-size: 125%;
+    line-height: 210%;
+    text-align: justify;
+    font-family: 'Open sans', sans-serif;
+    margin: 3%;
+}

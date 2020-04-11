@@ -1,21 +1,26 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'Naruto/style.css' %}">
     <title>AllCards</title>
+    
 </head>
-<body>
+<body id="background">
+    
     <ul>
-        <button><a href="{% url 'url_createCard' %}">Create new card</a></button>
+        <center><button class="btn"><a href="{% url 'url_createCard' %}">Create new card</a></button></center>
         <br>
         <hr>
         {% for card in cards %} 
             <h1><a href="{% url 'url_oneCard' card.id %}">{{card.name}}</a></h1>
-            <h3>{{card.description}}</h3>
-            <li>Level = {{card.level}}</li>
-            <li>Attack = {{card.attack}}</li>
-            <li>Defense = {{card.defense}}</li>
+            <h3 class="description">{{card.description}}</h3>
+            <li class="attribute">Level = {{card.level}}</li>
+            <li class="attribute">Attack = {{card.attack}}</li>
+            <li class="attribute">Defense = {{card.defense}}</li>
             <br>
             <hr>
         {% endfor %}
