@@ -8,7 +8,7 @@
     <title>Create</title>
 </head>
 <body id="background">
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.non_field_errors }}
 
@@ -40,6 +40,12 @@
             {{ form.attack.errors }}
             <label for="{{ form.attack.id_for_label }}">Attack:</label>
             {{ form.attack }}
+        </div>
+        <br>
+        <div class="fieldWrapper">
+            {{ form.image.errors }}
+            <label for="{{ form.image.id_for_label }}">Image:</label>
+            {{ form.image }}
         </div>
         <br>
         <button type='submit'>Save</button>

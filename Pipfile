@@ -9,8 +9,8 @@ pylint = "*"
 [packages]
 django = "*"
 djangorestframework = "*"
-django-cors-header = "*"
 django-cors-headers = "*"
+pillow = "*"
 
 [requires]
 python_version = "3.8"
