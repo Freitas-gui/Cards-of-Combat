@@ -11,6 +11,9 @@ django = "*"
 djangorestframework = "*"
 django-cors-headers = "*"
 pillow = "*"
+django-bootstrap4 = "*"
+django-bootstrap = "*"
+django-bootstrap-form = "*"
 
 [requires]
 python_version = "3.8"

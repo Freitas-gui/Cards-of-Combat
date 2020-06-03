@@ -1,31 +1,52 @@
+{% extends 'base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'Naruto/style.css' %}">
-    <title>AllCards</title>
-    
-</head>
-<body id="background">
-    
-    <ul>
-        <center><button class="btn"><a href = "{% url 'url_logout' %}">Logout</a></center></button>
-        <br>
-        <center><button class="btn"><a href="{% url 'url_createCard' %}">Create new card</a></button></center>
-        <br>
-        <hr>
-        {% for card in cards %} 
-            <h1><a href="{% url 'url_oneCard' card.id %}">{{card.name}}</a></h1>
-            <h3 class="description">{{card.description}}</h3>
-            <li class="attribute">Level = {{card.level}}</li>
-            <li class="attribute">Attack = {{card.attack}}</li>
-            <li class="attribute">Defense = {{card.defense}}</li>
-            <br>
+
+{% block title %} AllCards {% endblock %}
+
+{% block main %}
+<div class="container">
+        <div class="p-3 mb-10 bg-dark text-white">
+
+            <div class="row">
+                <div class="col"></div>
+                <div class=" row shadow p-3 mb-5 rounded">
+                    <div class="col">
+                        <button class="btn btn-secondary"><a href="{% url 'url_createCard' %}">New card</a></button>
+                    </div>
+                    <div class="col text-right">
+                        <button class="btn btn-secondary "><a href = "{% url 'url_logout' %}">Logout</a></button>
+                    </div>
+                </div>
+                <div class="col"></div>
+            </div>
             <hr>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+            {% for card in cards %}
+                <div class=" row">
+
+                    <div class = "col">
+                        <img src="{% static card.image.url %}" alt="My image" width="250" height="250">
+                    </div>
+
+                    <div class = "col">
+
+                        <h1><a href="{% url 'url_oneCard' card.id %}">{{card.name}}</a></h1>
+                        <h3 class="description">{{card.description}}</h3>
+
+                    </div>
+                    <div class = "col">
+                        <br><br><br>
+                        <ul>
+                            <h4><li class="attribute">Level = {{card.level}}</li></h4>
+                            <h4><li class="attribute">Attack = {{card.attack}}</li></h4>
+                            <h4><li class="attribute">Defense = {{card.defense}}</li></h4>
+                        </ul>
+
+                    </div>
+                </div>
+                <br>
+                <hr>
+            {% endfor %}
+        </div>
+</div>
+{% endblock %}

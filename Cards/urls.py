@@ -17,6 +17,8 @@ from Naruto.views import oneCard, allCards, createCard, update, delete
 from django.urls import path, include
 from home import urls as home_urls
 from django.contrib.auth import views as auth_views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,5 +29,5 @@ urlpatterns = [
     path('update/<int:pk>',update,name = 'url_update'),
     path('delete/<int:pk>',delete,name = 'url_delete'),
     path('login/', auth_views.LoginView.as_view(), name='url_login'),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
