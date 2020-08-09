@@ -9,7 +9,7 @@ class Card(models.Model):
     attack = models.PositiveIntegerField(default=1, validators=[MaxValueValidator(1000),MinValueValidator(0)])
     defense = models.PositiveIntegerField(default=1, validators=[MaxValueValidator(1000),MinValueValidator(0)])
 
-        image = models.ImageField(upload_to='card_image', null=True, blank=True)
+    image = models.ImageField(upload_to='card_image', null=True, blank=True)
 
     def __str__(self):
         return self.name

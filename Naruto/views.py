@@ -26,7 +26,7 @@ def createCard(request):
         return redirect('url_allCards')
     
     data['form'] = form
-    return render(request , 'Naruto/form.html' , data)
+    return render(request , 'Naruto/form_new_card.html' , data)
 
 @login_required
 def update(request , pk):
@@ -39,8 +39,7 @@ def update(request , pk):
         return redirect('url_allCards')
     
     data['form'] = form
-    data['card'] = card
-    return render(request , 'Naruto/form.html' , data)
+    return render(request , 'Naruto/form_update_card.html' , data)
 
 @login_required
 def delete(request , pk):

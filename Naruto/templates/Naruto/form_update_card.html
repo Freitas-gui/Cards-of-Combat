@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+
+ {% block title %}  {% endblock %}
+
+ {% block main %}
+ <div class="container bg-dark text-white"">
+     <div class="col-5"></div>
+ <div class="col-xs-pull-8 text-center">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        <h1>Update Card</h1><br>
+        <div class="fieldWrapper">
+            {{ form.name.errors }}
+            <div class="col"></div>
+            <div class="col">
+                <input class="form-control form-control-lg" type="text" placeholder=name {{ form.name }}
+            </div>
+        </div>
+        <br>
+        <div class="fieldWrapper">
+            {{ form.description.errors }}
+            <div class="col">
+
+                <textarea <input class="form-control form-control-lg" rows="5" type="text" placeholder=description {{ form.description }} {{ form.description.value }} </textarea>
+            </div>
+        </div>
+        <br>
+        <div class="fieldWrapper">
+            {{ form.level.errors }}
+            <div><label for="{{ form.level.id_for_label }}">Level:</label></div>
+            <div>{{ form.level }}</div>
+        </div>
+        <br>
+        <div class="fieldWrapper">
+            {{ form.defense.errors }}
+            <div><label for="{{ form.defense.id_for_label }}">Defense:</label></div>
+            <div>{{ form.defense }}</div>
+        </div>
+        <br>
+        <div class="fieldWrapper">
+            {{ form.attack.errors }}
+            <div><label for="{{ form.attack.id_for_label }}">Attack:</label></div>
+            <div>{{ form.attack }}</div>
+        </div>
+        <br>
+        <div class="fieldWrapper">
+            {{ form.image.errors }}
+            <div><label for="{{ form.image.id_for_label }}">Image:</label></div>
+            <div>{{ form.image }}</div>
+        </div>
+
+        <br>
+        <button class="btn btn-primary" type='submit '>Save</button>
+        <button class="btn btn-secondary"><a href="{% url 'url_allCards' %}">cancel</a></button>
+        <br><br>
+    </form>
+
+ </div>
+ <div class="col"></div>
+ </div>
+{% endblock %}
+</html>

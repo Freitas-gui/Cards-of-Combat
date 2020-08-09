@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'bootstrapform',
     'Naruto',
     'home',
+    'authenticate',
+
 ]
 
 MIDDLEWARE = [
@@ -65,6 +67,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
             ],
         },
     },
@@ -139,3 +142,5 @@ LOGIN_URL = '/login/'
 
 LOGIN_REDIRECT_URL = 'url_allCards'
 
+'''para mudar o usuario padrao'''
+AUTH_USER_MODEL = 'authenticate.User'

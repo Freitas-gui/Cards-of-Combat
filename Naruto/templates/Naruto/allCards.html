@@ -25,7 +25,9 @@
                 <div class=" row">
 
                     <div class = "col">
-                        <img src="{% static card.image.url %}" alt="My image" width="250" height="250">
+                        {% if card.image %}
+                            <img src="{% static card.image.url %}" alt="My image" width="250" height="250">
+                        {% endif %}
                     </div>
 
                     <div class = "col">

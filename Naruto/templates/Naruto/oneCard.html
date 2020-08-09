@@ -1,26 +1,50 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'Naruto/style.css' %}">
-    <title>OneCard</title>
-</head>
-<body id="background">
-    <h1 class="name">{{card.name}}</h1>
-    <h3 class="description">{{card.description}}</h3>
-    <li class="attribute">Level = {{card.level}}</li>
-    <li class="attribute">Attack = {{card.attack}}</li>
-    <li class="attribute">Defense = {{card.defense}}</li>
-    <br>
-    {{card.image}}
-    <br><br><br><br>
-    
-    <center><a href="{% url 'url_allCards' %}">Back to All Cards</a></center>
-    <br><br>
-    <center><a href="{% url 'url_update' card.id %}"> Update</a></center>
-    <br><br>
-    <center><a href="{% url 'url_delete' card.id %}">Delete</a></center>
-</body>
-</html>
+
+{% block title %} OneCard {% endblock %}
+
+{% block main %}
+    <br><br><br>
+    <div class="p-3 mb-10 bg-dark text-white">
+        <div class=" row">
+
+                    <div class = "col">
+                        {% if card.image %}
+                            <img src="{% static card.image.url %}" alt="My image" width="250" height="250">
+                        {% endif %}
+                    </div>
+
+                    <div class = "col">
+
+                        <h1>{{card.name}}</h1>
+                        <h3 class="description">{{card.description}}</h3>
+
+                    </div>
+                    <div class = "col">
+                        <br><br><br>
+                        <ul>
+                            <h4><li class="attribute">Level = {{card.level}}</li></h4>
+                            <h4><li class="attribute">Attack = {{card.attack}}</li></h4>
+                            <h4><li class="attribute">Defense = {{card.defense}}</li></h4>
+                        </ul>
+
+                    </div>
+                </div>
+        <br><br><br><br>
+        <div class=" row shadow p-3 mb-5 rounded">
+
+            <div class="col">
+                 <button onclick="location.href='{% url 'url_allCards' %}'" class="btn btn-primary">Back to All Cards</button>
+            </div>
+
+            <div class="col text-center">
+                <button onclick="location.href='{% url 'url_update' card.id %}'" class="btn btn-primary" > Update</button>
+            </div>
+
+            <div class="col text-right">
+                <button class="btn btn-danger" onclick="location.href='{% url 'url_delete' card.id %}'">Delete</button>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
