@@ -25,5 +25,3 @@ class formCard(forms.ModelForm):
                 erro_message = list_errors[erro]
                 self.add_error(erro, erro_message)
         return self.cleaned_data
-
-

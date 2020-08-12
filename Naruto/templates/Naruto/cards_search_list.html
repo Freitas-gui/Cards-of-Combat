@@ -1,12 +1,28 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %} OneCard {% endblock %}
+
+{% block title %} AllCards {% endblock %}
 
 {% block main %}
-    <br><br><br>
+<div class="container">
     <div class="p-3 mb-10 bg-dark text-white">
-        <div class=" row">
+
+       <div class=" row shadow p-3 mb-5 rounded">
+
+                <div class="col"></div>
+
+                    <div class="row shadow p-3 mb-2 rounded">
+                        <div class="col">
+                            <button onclick="location.href='{% url 'url_allCards' %}'" class="btn btn-warning">Back to All Cards</button>
+                        </div>
+                    </div>
+                <div class="col"></div>
+
+            <hr>
+
+            {% for card in object_list %}
+                <div class=" row">
 
                     <div class = "col">
                         {% if card.image %}
@@ -16,7 +32,7 @@
 
                     <div class = "col">
 
-                        <h1>{{card.name}}</h1>
+                        <h1><a href="{% url 'url_oneCard' card.id %}">{{card.name}}</a></h1>
                         <h3 class="description">{{card.description}}</h3>
 
                     </div>
@@ -30,21 +46,9 @@
 
                     </div>
                 </div>
-        <br><br><br><br>
-        <div class=" row shadow p-3 mb-5 rounded">
-
-            <div class="col">
-                 <button onclick="location.href='{% url 'url_allCards' %}'" class="btn btn-warning">Back to All Cards</button>
-            </div>
-
-            <div class="col text-center">
-                <button onclick="location.href='{% url 'url_update' card.id %}'" class="btn btn-primary" > Update</button>
-            </div>
-
-            <div class="col text-right">
-                <button class="btn btn-danger" onclick="location.href='{% url 'url_delete' card.id %}'">Delete</button>
-            </div>
-
+                <br>
+                <hr>
+            {% endfor %}
         </div>
-    </div>
+</div>
 {% endblock %}

@@ -19,6 +19,19 @@
                     </div>
                 </div>
                 <div class="col"></div>
+                </div>
+            <div class="container">
+                <div class="row shadow p-3 mb-5 rounded justify-content-center">
+                    <form class="form-inline" action="{% url 'url_search'%}"  method = "get" >
+                        <div class="col">
+                            <input class="form-control form-control-lg"  name = "q_name"  type = "text"  placeholder = "Search for name">
+                        </div>
+                        <div class ="col text-right">
+                            <input class="form-control form-control-lg"  name = "q_level"  type = "number"  placeholder = "Search for level">
+                        </div>
+                            <button class="btn btn-primary" type='submit '>Search</button>
+                    </form>
+                </div>
             </div>
             <hr>
             {% for card in cards %}

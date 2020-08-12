@@ -3,6 +3,9 @@ from .models import Card
 from .Form import formCard
 from django.contrib.auth.decorators import login_required
 
+# For do search of Cards
+from django.db.models import Q
+from django.views.generic import ListView
 
 @login_required
 def allCards(request):
@@ -46,3 +49,21 @@ def delete(request , pk):
     card = Card.objects.get(pk=pk)
     card.delete()
     return redirect('url_allCards')
+
+
+class SearchResultsView(ListView):
+    model = Card
+    template_name = 'Naruto/cards_search_list.html'
+
+    def get_queryset(self): # new
+        query_name = self.request.GET.get('q_name')
+        query_level = self.request.GET.get('q_level')
+        if query_level == '':
+            object_list = Card.objects.filter(
+                Q(name__startswith=query_name)
+                )
+        else:
+            object_list = Card.objects.filter(
+                Q(name__startswith=query_name) & Q(level__exact=query_level)
+            )
+        return object_list

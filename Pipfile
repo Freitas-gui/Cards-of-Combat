@@ -14,6 +14,7 @@ pillow = "*"
 django-bootstrap4 = "*"
 django-bootstrap = "*"
 django-bootstrap-form = "*"
+django-search-views = "*"
 
 [requires]
 python_version = "3.8"
