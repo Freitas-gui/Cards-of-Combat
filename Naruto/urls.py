@@ -11,3 +11,5 @@ urlpatterns = [
     path('delete/<int:pk>',delete,name = 'url_delete'),
     path('search/',SearchResultsView.as_view(), name = 'url_search'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+

@@ -1,0 +1,71 @@
+#img-header{
+    text-align: center;
+    width: 80%;
+    margin: 0 0 0 10%;
+    opacity: 50%;
+    box-shadow: 0px 10px 5px black;
+}
+
+#img-header:hover{
+    transition: 2s opacity;
+    opacity: 20%;
+}
+
+body{
+    background: linear-gradient(#6610b0,#661090,#6610b0,#661090);
+}
+
+#main{
+    margin-top: 5em;
+}
+
+#block-img{
+    text-align: center;
+}
+
+.img-card{
+    text-align: center;
+    box-shadow: -10px -10px 10px #000000, 10px 10px 10px #000000;
+}
+
+#description{
+}
+
+#description{
+    box-shadow: -10px -10px 10px #000000, 10px 10px 10px #000000;
+}
+
+#button{
+    margin: 300px 0px;
+}
+
+.rounded {
+    border-radius: 20px!important;
+}
+
+#background-search{
+    margin: 0 15%;
+}
+
+
+
+ul{
+    text-align: center;
+    font-size: 30px;
+}
+
+ul li:first-child:before{
+    content: "🧠";
+}
+
+ul li:nth-child(2):before{
+    content: "🗡";
+}
+
+ul li:last-child:before{
+    content: "🛡";
+}
+
+#botton-below{
+    margin: 0 1em;
+}

@@ -10,7 +10,7 @@
 
             <div class="row">
                 <div class="col"></div>
-                <div class=" row shadow p-3 mb-5 rounded">
+                <div class="row shadow p-3 mb-5 mt-5 rounded">
                     <div class="col">
                         <button class="btn btn-secondary"><a href="{% url 'url_createCard' %}">New card</a></button>
                     </div>
@@ -21,7 +21,7 @@
                 <div class="col"></div>
                 </div>
             <div class="container">
-                <div class="row shadow p-3 mb-5 rounded justify-content-center">
+                <div id="background-search"  class="row shadow p-3 mb-5 rounded justify-content-center">
                     <form class="form-inline" action="{% url 'url_search'%}"  method = "get" >
                         <div class="col">
                             <input class="form-control form-control-lg"  name = "q_name"  type = "text"  placeholder = "Search for name">
@@ -37,13 +37,13 @@
             {% for card in cards %}
                 <div class=" row">
 
-                    <div class = "col">
+                    <div class = "col" id="block-img">
                         {% if card.image %}
-                            <img src="{% static card.image.url %}" alt="My image" width="250" height="250">
+                            <img src="{% static card.image.url %}" alt="My image" width="250" height="300" class="img-card">
                         {% endif %}
                     </div>
 
-                    <div class = "col">
+                    <div class = "col" id="description">
 
                         <h1><a href="{% url 'url_oneCard' card.id %}">{{card.name}}</a></h1>
                         <h3 class="description">{{card.description}}</h3>
@@ -52,9 +52,9 @@
                     <div class = "col">
                         <br><br><br>
                         <ul>
-                            <h4><li class="attribute">Level = {{card.level}}</li></h4>
-                            <h4><li class="attribute">Attack = {{card.attack}}</li></h4>
-                            <h4><li class="attribute">Defense = {{card.defense}}</li></h4>
+                            <li class="attribute">Level = {{card.level}}</li>
+                            <li class="attribute">Attack = {{card.attack}}</li>
+                            <li class="attribute">Defense = {{card.defense}}</li>
                         </ul>
 
                     </div>

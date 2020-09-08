@@ -13,6 +13,7 @@ def allCards(request):
         Show all cards existing in database.
         :return render: A template that content list of cards and options
             of interaction, like the (search and new card).
+
     '''
     data = {}
     data['cards'] = Card.objects.all()
@@ -38,7 +39,6 @@ def createCard(request):
     if form.is_valid():
         form.save()
         return redirect('url_allCards')
-    
     data['form'] = form
     return render(request , 'Naruto/form_new_card.html' , data)
 
