@@ -6,7 +6,7 @@ class Card(models.Model):
     name = models.CharField(max_length = 33)
     description = models.CharField(max_length = 300)
     
-    level = models.PositiveIntegerField(default=1, validators=[MaxValueValidator(10),MinValueValidator(1)])
+    level = models.PositiveIntegerField(default=1)
     attack = models.PositiveIntegerField(default=1, validators=[MaxValueValidator(1000),MinValueValidator(0)])
     defense = models.PositiveIntegerField(default=1, validators=[MaxValueValidator(1000),MinValueValidator(0)])
 

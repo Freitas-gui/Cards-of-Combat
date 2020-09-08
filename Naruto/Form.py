@@ -3,10 +3,12 @@ from .models import Card
 from .validations import *
 
 class formCard(forms.ModelForm):
-
+    level = forms.IntegerField()
+    defense = forms.IntegerField()
+    attack = forms.IntegerField()
     class Meta:
         model = Card
-        fields = {'description', 'level', 'attack', 'name', 'defense', 'image'}
+        fields = {'description', 'attack', 'name', 'defense', 'image'}
 
     def clean(self):
         level = self.cleaned_data.get('level')
