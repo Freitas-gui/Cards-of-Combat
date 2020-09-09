@@ -4,11 +4,11 @@ from authenticate.models import User
 
 class Card(models.Model):
     name = models.CharField(max_length = 33)
-    description = models.CharField(max_length = 300)
+    description = models.CharField(max_length=300, null=False, blank=True)
     
-    level = models.PositiveIntegerField(default=1)
-    attack = models.PositiveIntegerField(default=1, validators=[MaxValueValidator(1000),MinValueValidator(0)])
-    defense = models.PositiveIntegerField(default=1, validators=[MaxValueValidator(1000),MinValueValidator(0)])
+    level = models.IntegerField(default=1)
+    attack = models.IntegerField(default=1)
+    defense = models.IntegerField(default=1)
 
     image = models.ImageField(upload_to='card_image', null=True, blank=True)
 

@@ -43,18 +43,18 @@
                         {% endif %}
                     </div>
 
-                    <div class = "col" id="description">
-
-                        <h1><a href="{% url 'url_oneCard' card.id %}">{{card.name}}</a></h1>
-                        <h3 class="description">{{card.description}}</h3>
-
+                    <div class = "col , txt">
+                        <div class="name">
+                            <a href="{% url 'url_oneCard' card.id %}">{{card.name}}</a>
+                        </div>
+                        <h3>{{card.description}}</h3>
                     </div>
                     <div class = "col">
                         <br><br><br>
-                        <ul>
-                            <li class="attribute">Level = {{card.level}}</li>
-                            <li class="attribute">Attack = {{card.attack}}</li>
-                            <li class="attribute">Defense = {{card.defense}}</li>
+                        <ul class="atribute">
+                            <li>Level = {{card.level}}</li>
+                            <li>Attack = {{card.attack}}</li>
+                            <li>Defense = {{card.defense}}</li>
                         </ul>
 
                     </div>

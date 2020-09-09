@@ -9,7 +9,6 @@
  <div class="col-xs-pull-8 text-center">
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.non_field_errors }}
         <h1>New Card</h1><br>
         <div class="fieldWrapper">
             {{ form.name.errors }}

@@ -3,20 +3,20 @@ from .models import Card
 from .validations import *
 
 class formCard(forms.ModelForm):
-    level = forms.IntegerField()
-    defense = forms.IntegerField()
-    attack = forms.IntegerField()
+
     class Meta:
         model = Card
-        fields = {'description', 'attack', 'name', 'defense', 'image'}
+        fields = {'description', 'level', 'attack', 'name', 'defense', 'image'}
 
     def clean(self):
+        description = self.cleaned_data.get('description')
         level = self.cleaned_data.get('level')
         attack = self.cleaned_data.get('attack')
         defense = self.cleaned_data.get('defense')
         image = self.cleaned_data.get('image')
 
         list_errors = {}
+        description_invalid_value('description', description, list_errors)
         level_invalid_value('level', level, list_errors)
         attack_or_defense_invalid_value('attack', attack, list_errors)
         attack_or_defense_invalid_value('defense', defense, list_errors)

@@ -23,16 +23,25 @@ body{
     text-align: center;
 }
 
+#name{
+    text-align: center;
+    width: 900px;
+    margin: 0 auto;
+}
+
 .img-card{
     text-align: center;
     box-shadow: -10px -10px 10px #000000, 10px 10px 10px #000000;
 }
 
-#description{
+.txt{
+    box-shadow: -10px -10px 10px #000000, 10px 10px 10px #000000;
 }
 
-#description{
-    box-shadow: -10px -10px 10px #000000, 10px 10px 10px #000000;
+.name{
+    font-size: 30px;
+    width: 328px;
+    text-align: center;
 }
 
 #button{
@@ -47,23 +56,17 @@ body{
     margin: 0 15%;
 }
 
-
-
 ul{
     text-align: center;
     font-size: 30px;
 }
 
-ul li:first-child:before{
+.atribute li:first-child:before{
     content: "🧠";
 }
 
-ul li:nth-child(2):before{
+.atribute li:nth-child(2):before{
     content: "🗡";
-}
-
-ul li:last-child:before{
-    content: "🛡";
 }
 
 #botton-below{
