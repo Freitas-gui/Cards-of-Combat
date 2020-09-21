@@ -3,4 +3,4 @@ It is a web application where I perform the CRUD of cards from the Naruto anime,
 In addition to CRUD, I implement other features such as: searching for letters by name and level and analyzing details of an isolated letter.
 
 
-! [] cards-of-combat-(GIF).gif
+![cards-of-combat-(GIF)](https://user-images.githubusercontent.com/38620899/93780068-12915200-fbfe-11ea-9570-3b5842aa58ff.gif)
