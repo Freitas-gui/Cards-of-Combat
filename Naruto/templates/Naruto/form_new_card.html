@@ -4,58 +4,61 @@
  {% block title %}  {% endblock %}
 
  {% block main %}
- <div class="container bg-dark text-white">
-     <div class="col-5"></div>
- <div class="col-xs-pull-8 text-center">
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        <h1>New Card</h1><br>
-        <div class="fieldWrapper">
-            {{ form.name.errors }}
-            <div class="col"></div>
-            <div class="col">
-                <input class="form-control form-control-lg" type="text" placeholder='{{ form.name.label }}' {{ form.name }}
+    <div class="container">
+     <div class="container bg-dark text-white">
+         <div class="col-5"></div>
+     <div class="col-xs-pull-8 text-center">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <br><br>
+            <h1>New Card</h1><br>
+            <div class="fieldWrapper">
+                {{ form.name.errors }}
+                <div class="col"></div>
+                <div class="col">
+                    <input class="form-control form-control-lg" type="text" placeholder='{{ form.name.label }}' {{ form.name }}
+                </div>
             </div>
-        </div>
-        <br>
-        <div class="fieldWrapper">
-            {{ form.description.errors }}
-            <div class="col">
-                <textarea class="form-control form-control-lg" rows="3" type="text" placeholder='{{ form.description.label }}' {{ form.description }}</textarea>
+            <br>
+            <div class="fieldWrapper">
+                {{ form.description.errors }}
+                <div class="col">
+                    <textarea class="form-control form-control-lg" rows="3" type="text" placeholder='{{ form.description.label }}' {{ form.description }}</textarea>
 
+                </div>
             </div>
-        </div>
-        <br>
-        <div class="fieldWrapper">
-            {{ form.level.errors }}
-            <div><label for="{{ form.level.id_for_label }}">{{form.level.label}}:</label></div>
-            <div>{{ form.level }}</div>
-        </div>
-        <br>
-        <div class="fieldWrapper">
-            {{ form.defense.errors }}
-            <div><label for="{{ form.defense.id_for_label }}">{{ form.defense.label }}:</label></div>
-            <div>{{ form.defense }}</div>
-        </div>
-        <br>
-        <div class="fieldWrapper">
-            {{ form.attack.errors }}
-            <div><label for="{{ form.attack.id_for_label }}">{{ form.attack.label }}:</label></div>
-            <div>{{ form.attack }}</div>
-        </div>
-        <br>
-        <div class="fieldWrapper">
-            {{ form.image.errors }}
-            <div><label for="{{ form.image.id_for_label }}">Image:</label></div>
-            <div>{{ form.image}}</div>
-        </div>
-        <br>
-        <button class="btn btn-primary" type='submit '>Save</button>
-        <button class="btn btn-secondary"><a href="{% url 'url_allCards' %}">cancel</a></button>
-        <br><br>
-    </form>
- </div>
- <div class="col"></div>
- </div>
+            <br>
+            <div class="fieldWrapper">
+                {{ form.level.errors }}
+                <div><label for="{{ form.level.id_for_label }}">{{form.level.label}}:</label></div>
+                <div>{{ form.level }}</div>
+            </div>
+            <br>
+            <div class="fieldWrapper">
+                {{ form.defense.errors }}
+                <div><label for="{{ form.defense.id_for_label }}">{{ form.defense.label }}:</label></div>
+                <div>{{ form.defense }}</div>
+            </div>
+            <br>
+            <div class="fieldWrapper">
+                {{ form.attack.errors }}
+                <div><label for="{{ form.attack.id_for_label }}">{{ form.attack.label }}:</label></div>
+                <div>{{ form.attack }}</div>
+            </div>
+            <br>
+            <div class="fieldWrapper">
+                {{ form.image.errors }}
+                <div><label for="{{ form.image.id_for_label }}">Image:</label></div>
+                <div>{{ form.image}}</div>
+            </div>
+            <br>
+            <button class="btn btn-primary" type='submit '>Save</button>
+            <button class="btn btn-secondary"><a href="{% url 'url_allCards' %}">cancel</a></button>
+            <br><br>
+        </form>
+     </div>
+     <div class="col"></div>
+     </div>
+</div>
 {% endblock %}
 </html>

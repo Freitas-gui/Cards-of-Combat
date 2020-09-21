@@ -23,12 +23,6 @@ body{
     text-align: center;
 }
 
-#name{
-    text-align: center;
-    width: 900px;
-    margin: 0 auto;
-}
-
 .img-card{
     text-align: center;
     box-shadow: -10px -10px 10px #000000, 10px 10px 10px #000000;
@@ -39,7 +33,7 @@ body{
 }
 
 .name{
-    font-size: 30px;
+    font-size: 35px;
     width: 328px;
     text-align: center;
 }
@@ -67,6 +61,10 @@ ul{
 
 .atribute li:nth-child(2):before{
     content: "🗡";
+}
+
+.atribute li:last-child:before{
+    content: "🛡";
 }
 
 #botton-below{

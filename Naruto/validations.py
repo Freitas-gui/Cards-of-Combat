@@ -1,10 +1,14 @@
 # do validations of forms
 
+def name_invalid_value(field_name, field_value, list_errors):
+    if len(field_value) > 20:
+        list_errors[field_name] = "Name cannot have grater than 20 chars."
+
 def description_invalid_value(field_name, field_value, list_errors):
     if len(field_value) < 100:
         list_errors[field_name] = "Description cannot have less than 100 chars."
-    if len(field_value) > 300:
-        list_errors[field_name] = "Description cannot have grater than 300 chars."
+    elif len(field_value) > 250:
+        list_errors[field_name] = "Description cannot have grater than 250 chars."
 
 
 

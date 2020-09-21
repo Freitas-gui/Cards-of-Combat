@@ -4,11 +4,15 @@
 {% block title %} Login {% endblock %}
 
 {% block main %}
+<div class="container">
+<br><br>
     <h1>Login</h1>
     <form method="post">
         {% csrf_token %}
         {{ form|bootstrap }}
         <button class="btn btn-primary" type="submit">Login</button>
     </form>
-
+<br><br>
+</div>
 {% endblock %}
+
